@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>I'm Sorry 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ffdde1 0%, #ee9ca7 40%, #2b1331 100%);
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .heart {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      right: -40px;
+      top: -40px;
+      background:
+        radial-gradient(circle at 30% 30%, #fff 0, #fff 10%, transparent 40%),
+        radial-gradient(circle at 70% 30%, #fff 0, #fff 10%, transparent 40%),
+        linear-gradient(135deg, #ff758c, #ff7eb3);
+      transform: rotate(-45deg);
+      opacity: 0.18;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 4px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff3c6a;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .subtitle span {
+      font-weight: 600;
+    }
+
+    .msg-container {
+      max-height: 450px;
+      overflow-y: auto;
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      padding: 14px;
+      background: #fffafc;
+    }
+
+    .line {
+      font-size: 0.95rem;
+      padding: 4px 0;
+      color: #333;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .line-number {
+      opacity: 0.7;
+      font-weight: 600;
+      min-width: 26px;
+    }
+
+    .line-heart {
+      opacity: 0.8;
+    }
+
+    .footer-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #666;
+    }
+
+    .footer-note span {
+      color: #ff3c6a;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart"></div>
+
+    <h1 class="title">I'm really sorry 💔</h1>
+    <p class="subtitle">
+      This page is just for you. <span>Every line</span> is how much I care.
+    </p>
+
+    <div class="msg-container" id="messages"></div>
+
+    <p class="footer-note">
+      I typed this with a little help from code, but every word is from <span>me</span>.
+    </p>
+  </div>
+
+  <script>
+    const message = "Sorry for everything and I’ll never leave you";
+
+    const container = document.getElementById("messages");
+    for (let i = 1; i <= 1000; i++) {
+      const line = document.createElement("div");
+      line.className = "line";
+
+      const num = document.createElement("span");
+      num.className = "line-number";
+      num.textContent = i + ".";
+
+      const text = document.createElement("span");
+      text.textContent = message;
+
+      const heart = document.createElement("span");
+      heart.className = "line-heart";
+      heart.textContent = "❤️";
+
+      line.appendChild(num);
+      line.appendChild(text);
+      line.appendChild(heart);
+      container.appendChild(line);
+    }
+  </script>
+</body>
+</html>
